@@ -156,10 +156,10 @@
     .btn-primary {
       background: var(--accent);
       color: white;
-      padding: 0.75rem 1.75rem;
-      border-radius: 8px;
+      padding: 0.55rem 1.25rem;
+      border-radius: 7px;
       font-weight: 600;
-      font-size: 0.875rem;
+      font-size: 0.82rem;
       text-decoration: none;
       transition: background 0.2s, transform 0.15s;
       display: inline-block;
@@ -169,15 +169,58 @@
     .btn-outline {
       border: 1.5px solid var(--grey);
       color: var(--charcoal);
-      padding: 0.75rem 1.75rem;
-      border-radius: 8px;
+      padding: 0.55rem 1.25rem;
+      border-radius: 7px;
       font-weight: 600;
-      font-size: 0.875rem;
+      font-size: 0.82rem;
       text-decoration: none;
       transition: border-color 0.2s, color 0.2s;
       display: inline-block;
     }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .btn-resume {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #1a1f36 0%, #2d3561 100%);
+      color: white;
+      padding: 0.55rem 1.1rem;
+      border-radius: 7px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.12);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.25);
+    }
+    .btn-resume::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(37,99,235,0.3), rgba(96,165,250,0.15));
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .btn-resume:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(37,99,235,0.4); }
+    .btn-resume:hover::before { opacity: 1; }
+    .btn-resume:active { transform: translateY(0); }
+    .btn-resume-icon {
+      width: 22px;
+      height: 22px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .btn-resume-icon svg { width: 14px; height: 14px; }
+    .btn-resume-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .btn-resume-label { font-size: 0.7rem; color: #93c5fd; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    .btn-resume-action { font-size: 0.875rem; font-weight: 700; }
 
     .photo-placeholder {
       width: 280px;
@@ -783,6 +826,19 @@
       <div class="hero-ctas">
         <a href="#experience" class="btn-primary">View My Experience</a>
         <a href="#contact" class="btn-outline">Get In Touch</a>
+        <a href="Priscia_Kibibi_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn-resume">
+          <div class="btn-resume-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </div>
+          <div class="btn-resume-text">
+            <span class="btn-resume-label">Download</span>
+            <span class="btn-resume-action">My Resume</span>
+          </div>
+        </a>
       </div>
     </div>
     <img src="My-Photo.jpg" alt="Priscia Kibibi" style="width:280px;height:280px;border-radius:24px;object-fit:cover;object-position:center top;box-shadow:0 20px 60px rgba(0,0,0,0.12);" />
