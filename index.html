@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priscia Kibibi | IT Infrastructure & Systems Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --light: #f7f8fc;
+      --grey: #e4e7ef;
+      --mid-grey: #9aa0b4;
+      --dark: #1a1f36;
+      --charcoal: #3a4060;
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --accent-dark: #1d4ed8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--grey);
+      z-index: 100;
+      padding: 0 2.5rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--dark);
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--charcoal);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── SHARED ── */
+    section { padding: 96px 2.5rem; }
+    .container { max-width: 1080px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+    .divider {
+      width: 44px;
+      height: 3px;
+      background: var(--accent);
+      border-radius: 2px;
+      margin-bottom: 3rem;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--light);
+      padding-top: 64px;
+    }
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-text { flex: 1; }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .hero-name {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -0.035em;
+      line-height: 1.05;
+      color: var(--dark);
+      margin-bottom: 1rem;
+    }
+    .hero-name span { color: var(--accent); }
+
+    .hero-title {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+    .hero-desc {
+      font-size: 0.975rem;
+      color: #6b7280;
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.25rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    .btn-outline {
+      border: 1.5px solid var(--grey);
+      color: var(--charcoal);
+      padding: 0.75rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+    .photo-placeholder {
+      width: 280px;
+      height: 280px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #dbeafe 0%, #e4e7ef 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--mid-grey);
+      font-size: 0.82rem;
+      font-weight: 500;
+      border: 2px dashed #c7d2fe;
+      flex-shrink: 0;
+    }
+    .photo-placeholder svg { width: 56px; height: 56px; opacity: 0.45; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: #4b5563;
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
+      font-size: 0.975rem;
+    }
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+    .stat-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 1px solid var(--grey);
+    }
+    .stat-number {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--mid-grey);
+      font-weight: 500;
+      margin-top: 0.4rem;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { background: var(--light); }
+    .timeline { position: relative; padding-left: 1.75rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--grey);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.75rem;
+      padding-left: 2rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.75rem;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--light);
+      box-shadow: 0 0 0 2px var(--accent);
+      transform: translateX(-5px);
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 0.3rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .job-title { font-size: 1.02rem; font-weight: 700; color: var(--dark); }
+    .job-company {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.15rem;
+    }
+    .job-date {
+      font-size: 0.78rem;
+      color: var(--mid-grey);
+      font-weight: 500;
+      background: white;
+      border: 1px solid var(--grey);
+      padding: 0.2rem 0.75rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .job-bullets { list-style: none; margin-top: 0.75rem; }
+    .job-bullets li {
+      font-size: 0.9rem;
+      color: #4b5563;
+      padding: 0.28rem 0 0.28rem 1.1rem;
+      position: relative;
+      line-height: 1.65;
+    }
+    .job-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.82rem;
+      top: 0.32rem;
+    }
+
+    /* ── SKILLS ── */
+    #skills { background: var(--white); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-category {
+      background: var(--light);
+      border: 1px solid var(--grey);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .skill-category-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-tag {
+      background: var(--white);
+      border: 1px solid var(--grey);
+      color: var(--charcoal);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    /* ── VENDORS ── */
+    #vendors { background: var(--light); }
+    .vendors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+    .vendor-card {
+      background: var(--white);
+      border: 1px solid var(--grey);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .vendor-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(37,99,235,0.09);
+      border-color: var(--accent);
+    }
+    .vendor-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .vendor-tag {
+      display: inline-block;
+      background: var(--accent-light);
+      color: var(--accent-dark);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .vendor-desc {
+      font-size: 0.85rem;
+      color: #4b5563;
+      line-height: 1.65;
+    }
+
+    /* ── HOBBIES ── */
+    #hobbies { background: var(--white); }
+    .hobbies-grid {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hobby-card {
+      background: var(--light);
+      border: 1px solid var(--grey);
+      border-radius: 16px;
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      min-width: 180px;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+    .hobby-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(37,99,235,0.10);
+      border-color: var(--accent);
+    }
+    .hobby-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--accent-light);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hobby-icon svg { width: 28px; height: 28px; stroke: var(--accent); }
+    .hobby-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--dark);
+      text-align: center;
+    }
+    .hobby-desc {
+      font-size: 0.8rem;
+      color: var(--mid-grey);
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    /* ── EDUCATION ── */
+    #education { background: var(--light); }
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .edu-section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+    }
+    .edu-item {
+      border-left: 3px solid var(--accent);
+      padding-left: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+    .edu-degree {
+      font-weight: 700;
+      font-size: 0.925rem;
+      color: var(--dark);
+      line-height: 1.4;
+    }
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+    .edu-year {
+      font-size: 0.78rem;
+      color: var(--mid-grey);
+      margin-top: 0.15rem;
+    }
+    .cert-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .cert-card {
+      background: var(--white);
+      border: 1px solid var(--grey);
+      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .cert-icon {
+      width: 42px;
+      height: 42px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cert-icon svg { width: 20px; height: 20px; color: var(--accent); stroke: var(--accent); }
+    .cert-name { font-weight: 700; font-size: 0.9rem; color: var(--dark); }
+    .cert-id { font-size: 0.77rem; color: var(--mid-grey); margin-top: 0.1rem; }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+    }
+    #contact .section-label { color: #60a5fa; }
+    #contact .section-title { color: white; }
+    #contact .divider { margin: 0 auto 2rem; }
+
+    .contact-tagline {
+      color: #9ca3af;
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #d1d5db;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.925rem;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: #60a5fa; }
+    .contact-link svg { width: 18px; height: 18px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111827;
+      color: #6b7280;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+
+      section { padding: 64px 1.25rem; }
+
+      .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+      .hero-ctas { justify-content: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .photo-placeholder { width: 200px; height: 200px; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .edu-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .section-title { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Priscia <span>Kibibi</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#vendors">Vendors</a></li>
+    <li><a href="#hobbies">Interests</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-badge">Open to Opportunities</span>
+      <h1 class="hero-name">Priscia<br><span>Kibibi</span></h1>
+      <p class="hero-title">Lead IT Infrastructure &amp; Application Systems Engineer</p>
+      <p class="hero-desc">
+        Bilingual (French/English) IT leader with 8+ years of experience driving enterprise infrastructure stability, modern deployments, and cross-functional collaboration at Deloitte University.
+      </p>
+      <div class="hero-ctas">
+        <a href="#experience" class="btn-primary">View My Experience</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <img src="My-Photo.jpg" alt="Priscia Kibibi" style="width:280px;height:280px;border-radius:24px;object-fit:cover;object-position:center top;box-shadow:0 20px 60px rgba(0,0,0,0.12);" />
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">About Me</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="divider"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a bilingual (French/English) IT Infrastructure &amp; Application Systems Engineer with 8 years of experience, including 6+ years supporting Deloitte University's technology operations. I specialize in keeping complex enterprise environments running reliably while continuously raising the bar on how teams operate.
+        </p>
+        <p>
+          My expertise spans Windows Server, VMware ESXi/vSphere, SolarWinds monitoring, SCCM patching, backup/restore, and ITIL-based incident and change management. I'm known for a calm, troubleshooting-first approach, clear communication across all levels, and disciplined documentation.
+        </p>
+        <p>
+          Whether I'm coordinating with vendors like Honeywell and Cisco, managing BMS code deployments, or leading technical solution calls with developers, I bring both the technical depth and the leadership presence to get it done right.
+        </p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card">
+          <div class="stat-number">8+</div>
+          <div class="stat-label">Years IT Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6+</div>
+          <div class="stat-label">Years at Deloitte University</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Languages (FR / EN)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Professional Certifications</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Career History</div>
+    <h2 class="section-title">Experience</h2>
+    <div class="divider"></div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Lead Infrastructure Engineer</div>
+            <div class="job-company">Deloitte</div>
+          </div>
+          <span class="job-date">Nov 2025 – Present</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Implemented standard operating procedures for new team members using Smartsheet to streamline work processes.</li>
+          <li>Led execution of DA Glide Survey to live production environment with high-traffic user engagement.</li>
+          <li>Led technical solution calls with developers for DA Glide Deployment.</li>
+          <li>Managed the CXO Experience and Sentiment Dashboard project using the Gemini AI Model.</li>
+          <li>Ran Nexthink Surveys to targeted user devices to understand digital experience scores.</li>
+          <li>Standardized release/change coordination and operational processes to improve reliability and response times.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Lead Network Engineer</div>
+            <div class="job-company">Deloitte</div>
+          </div>
+          <span class="job-date">Nov 2021 – Nov 2025</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Administered on-prem application hosting on VMware ESXi/vSphere; performed capacity checks, maintenance, and backup/restore to meet availability targets.</li>
+          <li>Monitored infrastructure and application health via SolarWinds; triaged alerts and communicated status/ETAs to DU stakeholders.</li>
+          <li>Executed patching (SCCM) and validated post-patch service health; coordinated change windows and vendor engagement.</li>
+          <li>Managed vendor relationships (Honeywell, Infor, Cisco, Palo Alto) to sustain hotel and BMS technology services during incidents.</li>
+          <li>Led complex Honeywell BMS code deployments, including CAD file updates and BACnet device management.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">ITS Analyst</div>
+            <div class="job-company">Deloitte</div>
+          </div>
+          <span class="job-date">Nov 2019 – Nov 2021</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Delivered client-facing IT support and walk-up assistance at Deloitte University.</li>
+          <li>Managed user profiles and group policies via Active Directory; secured mobile devices using Intune.</li>
+          <li>Imaged and updated 1,000+ machines using gigabit switch adapters.</li>
+          <li>Generated 2,000+ passwords via Python scripts during the firm-wide COVID shutdown.</li>
+          <li>Enabled automated backups via Druva Endpoint Protection and conducted compliance scans using McAfee.</li>
+          <li>Built machines and deployed profiles using LinchPin and LAN connections; created Mac profiles using Mac deployment tools.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Site Manager</div>
+            <div class="job-company">Rex Programming</div>
+          </div>
+          <span class="job-date">May 2018 – Jul 2019</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Managed a cross-regional team of 8 educators across Texas, North Carolina, and India.</li>
+          <li>Designed and delivered STEM curriculum in Front-End Development and Cybersecurity.</li>
+          <li>Taught students foundational software development in Java, Python, and JavaScript.</li>
+          <li>Implemented Jack Rabbit Technology to streamline payment and registration systems.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Information Security Specialist</div>
+            <div class="job-company">Contego Information Management</div>
+          </div>
+          <span class="job-date">Jun 2015 – Sep 2016</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Built a scanning application using VBA scripting; developed front-end UIs with HTML5, CSS3, and JavaScript.</li>
+          <li>Migrated physical documents to client cloud infrastructure via Laserfiche ECM.</li>
+          <li>Supported server/cloud infrastructure by troubleshooting bottleneck issues.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="job-header">
+          <div>
+            <div class="job-title">Electronic Channel Support</div>
+            <div class="job-company">Fidelity Investments</div>
+          </div>
+          <span class="job-date">Feb 2015 – Sep 2015</span>
+        </div>
+        <ul class="job-bullets">
+          <li>Provided Level 2 technical support, diagnosing Active Trader Pro issues across Linux, Windows, and macOS.</li>
+          <li>Maintained and updated Fidelity client web, desktop, Android, and iOS applications remotely.</li>
+          <li>Handled escalated bug fixes for high-priority clients and ensured system uptime through proactive maintenance.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Technical Expertise</div>
+    <h2 class="section-title">Skills &amp; Technologies</h2>
+    <div class="divider"></div>
+    <div class="skills-grid">
+
+      <div class="skill-category">
+        <div class="skill-category-title">Infrastructure &amp; Servers</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Windows Server 2016–2022</span>
+          <span class="skill-tag">VMware ESXi / vSphere</span>
+          <span class="skill-tag">SolarWinds</span>
+          <span class="skill-tag">SCCM Patching</span>
+          <span class="skill-tag">Backup / Restore</span>
+          <span class="skill-tag">Honeywell BMS</span>
+          <span class="skill-tag">Infor HMS</span>
+          <span class="skill-tag">IP Subnetting</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">Security &amp; Compliance</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Cybersecurity</span>
+          <span class="skill-tag">PCI Compliance</span>
+          <span class="skill-tag">Netskope</span>
+          <span class="skill-tag">Intune (MDM)</span>
+          <span class="skill-tag">Access Control Systems</span>
+          <span class="skill-tag">ITIL Processes</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">Development &amp; Scripting</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">PowerShell</span>
+          <span class="skill-tag">HTML / CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">VBA</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">Platforms &amp; Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Active Directory</span>
+          <span class="skill-tag">ServiceNow</span>
+          <span class="skill-tag">Smartsheet</span>
+          <span class="skill-tag">Nexthink</span>
+          <span class="skill-tag">SAP / LAM</span>
+          <span class="skill-tag">Druva</span>
+          <span class="skill-tag">McAfee</span>
+          <span class="skill-tag">Active Trader Pro</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-category-title">Leadership &amp; Collaboration</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Team Management</span>
+          <span class="skill-tag">Vendor Coordination</span>
+          <span class="skill-tag">Project Leadership</span>
+          <span class="skill-tag">Incident Response</span>
+          <span class="skill-tag">Change Management</span>
+          <span class="skill-tag">Cross-Regional Teams</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VENDOR RELATIONSHIPS -->
+<section id="vendors">
+  <div class="container">
+    <div class="section-label">Enterprise Partnerships</div>
+    <h2 class="section-title">Vendor Relationships</h2>
+    <div class="divider"></div>
+    <div class="vendors-grid">
+
+      <div class="vendor-card">
+        <div class="vendor-name">Honeywell</div>
+        <span class="vendor-tag">Building Management Systems</span>
+        <p class="vendor-desc">Led complex Honeywell BMS code deployments including CAD file updates and BACnet device management, coordinating directly with Honeywell engineers to sustain hotel and facility technology services during incidents.</p>
+      </div>
+
+      <div class="vendor-card">
+        <div class="vendor-name">Cisco</div>
+        <span class="vendor-tag">Networking Infrastructure</span>
+        <p class="vendor-desc">Managed Cisco network infrastructure at Deloitte University, coordinating with Cisco support to maintain reliable network operations, resolve incidents, and sustain uptime for business-critical systems.</p>
+      </div>
+
+      <div class="vendor-card">
+        <div class="vendor-name">Palo Alto Networks</div>
+        <span class="vendor-tag">Cybersecurity</span>
+        <p class="vendor-desc">Partnered with Palo Alto Networks to enforce network security policies, manage firewall infrastructure, and ensure compliance with enterprise security standards across the DU environment.</p>
+      </div>
+
+      <div class="vendor-card">
+        <div class="vendor-name">Infor HMS</div>
+        <span class="vendor-tag">Hospitality Management</span>
+        <p class="vendor-desc">Supported Infor Hotel Management System operations at Deloitte University, coordinating vendor engagement to sustain hotel technology services and restore production operations during incidents.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOBBIES & INTERESTS -->
+<section id="hobbies">
+  <div class="container">
+    <div class="section-label">Beyond the Work</div>
+    <h2 class="section-title">Hobbies &amp; Interests</h2>
+    <div class="divider"></div>
+    <div class="hobbies-grid">
+
+      <div class="hobby-card">
+        <div class="hobby-icon">
+          <!-- Plane / Travel icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2h0A1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" stroke="currentColor"/>
+          </svg>
+        </div>
+        <div class="hobby-name">Travel &amp; Exploration</div>
+        <div class="hobby-desc">Discovering new places &amp; cultures around the world</div>
+      </div>
+
+      <div class="hobby-card">
+        <div class="hobby-icon">
+          <!-- Golf icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+            <line x1="12" y1="2" x2="12" y2="18" stroke="currentColor"/>
+            <path d="M12 2l6 4-6 4" stroke="currentColor" stroke-linejoin="round"/>
+            <ellipse cx="10" cy="20" rx="5" ry="2" stroke="currentColor"/>
+          </svg>
+        </div>
+        <div class="hobby-name">Golfing</div>
+        <div class="hobby-desc">Hitting the green and enjoying the game</div>
+      </div>
+
+      <div class="hobby-card">
+        <div class="hobby-icon">
+          <!-- Circuit / Tech icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg">
+            <rect x="9" y="9" width="6" height="6" rx="1" stroke="currentColor"/>
+            <path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" stroke="currentColor" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="hobby-name">Tech &amp; Tinkering</div>
+        <div class="hobby-desc">Exploring new tools, gadgets &amp; side projects</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION & CERTS -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">Education &amp; Certifications</h2>
+    <div class="divider"></div>
+    <div class="edu-grid">
+
+      <div>
+        <div class="edu-section-label">Academic Degrees</div>
+        <div class="edu-item">
+          <div class="edu-degree">Master's in Information Technology Management</div>
+          <div class="edu-school">Western Governors University</div>
+          <div class="edu-year">October 2024</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor's in Science Management</div>
+          <div class="edu-school">Ashworth College</div>
+          <div class="edu-year">July 2021</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-degree">Associate in Computer Information Systems</div>
+          <div class="edu-school">Ashworth College</div>
+          <div class="edu-year">September 2017</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="edu-section-label">Certifications</div>
+        <div class="cert-cards">
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor"/>
+              </svg>
+            </div>
+            <div>
+              <div class="cert-name">CCNA — Cisco Certified Network Associate</div>
+              <div class="cert-id">ID: CSCO14942414</div>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="cert-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="7" width="20" height="14" rx="2" stroke="currentColor"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="currentColor"/>
+              </svg>
+            </div>
+            <div>
+              <div class="cert-name">PMP — Project Management Professional</div>
+              <div class="cert-id">ID: 3542205</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="divider"></div>
+    <p class="contact-tagline">Open to new opportunities — feel free to reach out directly.</p>
+    <div class="contact-links">
+      <a href="mailto:prisciakibibi@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        prisciakibibi@gmail.com
+      </a>
+      <a href="tel:8176913899" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.38 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        817-691-3899
+      </a>
+      <a href="#" class="contact-link" title="Add your LinkedIn URL here">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Priscia Kibibi &nbsp;·&nbsp; Keller, TX</p>
+</footer>
+
+</body>
+</html>
