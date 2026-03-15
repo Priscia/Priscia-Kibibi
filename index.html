@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Priscia Kibibi | IT Infrastructure & Systems Engineer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -341,6 +341,197 @@
       border-radius: 6px;
     }
 
+    /* ── PROJECTS ── */
+    #projects { background: var(--dark); }
+    #projects .section-label { color: #60a5fa; }
+    #projects .section-title { color: white; }
+    #projects .divider { background: #2563eb; }
+
+    .project-card {
+      background: #1e2a45;
+      border: 1px solid rgba(96,165,250,0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+    }
+    .project-preview {
+      position: relative;
+      background: #000;
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .project-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(37,99,235,0.15) 0%, transparent 70%);
+      z-index: 1;
+    }
+    .project-mock {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
+      gap: 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+    .mock-icon {
+      width: 64px;
+      height: 64px;
+      background: #84cc16;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 40px rgba(132,204,22,0.4);
+    }
+    .mock-icon svg { width: 32px; height: 32px; }
+    .mock-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: white;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+    .mock-subtitle {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      text-align: center;
+    }
+    .mock-roles {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      width: 100%;
+      max-width: 240px;
+    }
+    .mock-role {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.78rem;
+      color: #d1d5db;
+      font-weight: 500;
+    }
+    .mock-role span {
+      font-weight: 700;
+      color: white;
+      display: block;
+    }
+    .mock-stats {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .mock-stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      text-align: center;
+    }
+    .mock-stat-num {
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: #84cc16;
+    }
+    .mock-stat-label {
+      font-size: 0.65rem;
+      color: #6b7280;
+      margin-top: 0.1rem;
+    }
+    .project-info {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1.25rem;
+    }
+    .project-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #60a5fa;
+    }
+    .project-name {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .project-desc {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.75;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .project-tag {
+      background: rgba(37,99,235,0.15);
+      border: 1px solid rgba(37,99,235,0.3);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+    }
+    .project-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .project-highlight {
+      font-size: 0.85rem;
+      color: #d1d5db;
+      padding-left: 1rem;
+      position: relative;
+      line-height: 1.5;
+    }
+    .project-highlight::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: #84cc16;
+      font-size: 0.6rem;
+      top: 0.25rem;
+    }
+    .project-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #2563eb;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      width: fit-content;
+    }
+    .project-cta:hover { background: #1d4ed8; transform: translateY(-1px); }
+    .project-cta svg { width: 16px; height: 16px; }
+
+    @media (max-width: 768px) {
+      .project-card { grid-template-columns: 1fr; }
+      .project-preview { min-height: 280px; }
+    }
+
     /* ── VENDORS ── */
     #vendors { background: var(--light); }
     .vendors-grid {
@@ -571,6 +762,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#vendors">Vendors</a></li>
     <li><a href="#hobbies">Interests</a></li>
     <li><a href="#education">Education</a></li>
@@ -582,7 +774,7 @@
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <span class="hero-badge"> Employed and Open to Opportunities</span>
+      <span class="hero-badge">Open to Opportunities</span>
       <h1 class="hero-name">Priscia<br><span>Kibibi</span></h1>
       <p class="hero-title">Lead IT Infrastructure &amp; Application Systems Engineer</p>
       <p class="hero-desc">
@@ -818,6 +1010,81 @@
           <span class="skill-tag">Change Management</span>
           <span class="skill-tag">Cross-Regional Teams</span>
         </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Featured Work</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="divider"></div>
+
+    <div class="project-card">
+
+      <!-- Live preview mock -->
+      <div class="project-preview">
+        <div class="project-mock">
+          <div class="mock-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2.5">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <div class="mock-title">CX Experience Pulse</div>
+          <div class="mock-subtitle">Enterprise Solution Command Center</div>
+          <div class="mock-roles">
+            <div class="mock-role"><span>Support Agent</span>Queue management · ticket handling · SLA</div>
+            <div class="mock-role"><span>Support Manager</span>Workload balancing · team performance</div>
+            <div class="mock-role"><span>Executive / Product Owner</span>Customer impact · strategic KPIs</div>
+          </div>
+          <div class="mock-stats">
+            <div class="mock-stat">
+              <div class="mock-stat-num">200+</div>
+              <div class="mock-stat-label">Tickets</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-num">2</div>
+              <div class="mock-stat-label">Active Incidents</div>
+            </div>
+            <div class="mock-stat">
+              <div class="mock-stat-num">10</div>
+              <div class="mock-stat-label">KB Articles</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project details -->
+      <div class="project-info">
+        <div class="project-eyebrow">AI Proof of Concept</div>
+        <div class="project-name">CX Experience Pulse</div>
+        <p class="project-desc">
+          A fully functional AI-powered enterprise command center built as a proof of concept. Designed to unify customer experience operations across support teams, managers, and executives — all in one real-time dashboard.
+        </p>
+        <div class="project-highlights">
+          <div class="project-highlight">Role-based access for Support Agents, Managers, and Executives</div>
+          <div class="project-highlight">Real-time ticket queue management with SLA tracking</div>
+          <div class="project-highlight">Executive KPI dashboard with major incident visibility</div>
+          <div class="project-highlight">Built and deployed using AI-assisted development</div>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">AI-Powered</span>
+          <span class="project-tag">Enterprise Dashboard</span>
+          <span class="project-tag">SLA Management</span>
+          <span class="project-tag">CX Operations</span>
+          <span class="project-tag">Proof of Concept</span>
+        </div>
+        <a href="https://pulse-app-sigma-ebon.vercel.app/login" target="_blank" class="project-cta">
+          View Live Demo
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
       </div>
 
     </div>
